@@ -16,8 +16,8 @@ class EmpruntStatus(str, Enum):
 
 
 
-class Emprunt(Base):
-    __tablename__ = "emprunts"
+class Return(Base):
+    __tablename__ = "returns"
 
 
     uuid = Column(String(36), primary_key=True,index=True)
@@ -34,7 +34,7 @@ class Emprunt(Base):
     note : str = Column(Text, nullable=True)
     status : str = Column(String, nullable=False,default=EmpruntStatus.pending)
 
-    date_return = Column(DateTime, nulllable=True)
+    date_return_exact = Column(DateTime, nulllable=False)
 
     is_deleted: bool = Column(Boolean, nullable=False)
     created_at = Column(DateTime, default=func.now())  # Account creation timestamp

@@ -12,7 +12,8 @@ from enum import Enum
 class UserRole(str, Enum):
     ADMIN = "ADMIN"
     EDIMESTRE = "EDIMESTRE"
-    SUPER_ADMIN = "SUPER_ADMIN"
+    SUPER_ADMIN = "SUPER_ADMIN",
+    USER = "USER"
     
 
 class UserStatus(str, Enum):
