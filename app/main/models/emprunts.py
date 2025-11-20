@@ -34,7 +34,7 @@ class Emprunt(Base):
     note : str = Column(Text, nullable=True)
     status : str = Column(String, nullable=False,default=EmpruntStatus.pending)
 
-    date_return = Column(DateTime, nulllable=True)
+    date_return = Column(DateTime, nullable=True)
 
     is_deleted: bool = Column(Boolean, nullable=False)
     created_at = Column(DateTime, default=func.now())  # Account creation timestamp
