@@ -172,4 +172,4 @@ class CRUD_RETURN(CRUDBase[models.Return,schemas.ReturnCreate,schemas.ReturnUpda
         )
 
 
-return = CRUD_RETURN(models.Return)
+retours = CRUD_RETURN(models.Return)

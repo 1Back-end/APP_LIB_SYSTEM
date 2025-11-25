@@ -6,3 +6,4 @@ from .category_books import *
 from .book import *
 from .emprunts import *
 from .retours import *
+from .bibliotheque import *
