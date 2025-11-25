@@ -55,6 +55,10 @@ class CountryResponseList(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
+class CountryCreate(BaseModel):
+    code : str
+    name: str
+
 class CountrySlim(BaseModel):
     uuid: str
     code : str

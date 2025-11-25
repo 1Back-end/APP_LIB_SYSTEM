@@ -17,9 +17,7 @@ class Country(Base):
 
     # Relations
     cities = relationship("City", back_populates="country")  # ici singularisé
-    customers = relationship("Customer", back_populates="country")  # <--- ajouté
-
-
+    
 class City(Base):
     __tablename__ = "cities"
 
@@ -36,4 +34,3 @@ class City(Base):
 
     # Relations
     country = relationship("Country", back_populates="cities")  # ici match avec cities
-    customers = relationship("Customer", back_populates="city")  # <--- ajouté

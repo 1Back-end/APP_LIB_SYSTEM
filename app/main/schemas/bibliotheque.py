@@ -15,9 +15,21 @@ class Bibliotheque(BaseModel):
     web_site: str
     id_number: str
     description: Optional[str]
-    address_uuid: str
+    #Informations de création d'adresse
+    street: str
+    city: str
+    state: Optional[str] = None
+    zipcode: str
+    country: str
+    #Création d'un manager
+    email: str
+    phone_number: str
+    first_name: str
+    last_name: str
+
     country_uuid: str
     city_uuid: str
+    logo_uuid : Optional[str]
 
 
 class BibliothequeCreate(Bibliotheque):
