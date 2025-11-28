@@ -8,6 +8,8 @@ from .category_book_controller import router as category_book
 from .book_controller import router as book
 from .emprunt_controller import router as emprunt
 from .retours_controller import router as retours
+from .country_with_city_controller import router as country_with_city
+from .bibliotheque_controller import router as bibliotheque
 
 
 api_router = APIRouter()
@@ -21,3 +23,5 @@ api_router.include_router(category_book)
 api_router.include_router(book)
 api_router.include_router(emprunt)
 api_router.include_router(retours)
+api_router.include_router(country_with_city)
+api_router.include_router(bibliotheque)

@@ -15,21 +15,14 @@ class Bibliotheque(BaseModel):
     web_site: str
     id_number: str
     description: Optional[str]
-    #Informations de création d'adresse
+    address_uuid: str
+    country_uuid: str
+    city_uuid: str
     street: str
     city: str
     state: Optional[str] = None
     zipcode: str
     country: str
-    #Création d'un manager
-    email: str
-    phone_number: str
-    first_name: str
-    last_name: str
-
-    country_uuid: str
-    city_uuid: str
-    logo_uuid : Optional[str]
 
 
 class BibliothequeCreate(Bibliotheque):
@@ -48,8 +41,11 @@ class BibliothequeUpdate(BaseModel):
     address_uuid: Optional[str]
     country_uuid: Optional[str]
     city_uuid: Optional[str]
-    
-
+    street: Optional[str]
+    city: Optional[str]
+    state: Optional[str] 
+    zipcode: Optional[str]
+    country: Optional[str]
 
 
 class BibliothequeUpdateStatus(BaseModel):

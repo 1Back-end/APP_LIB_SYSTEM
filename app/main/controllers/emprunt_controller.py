@@ -67,7 +67,7 @@ async def get_emprunt_by_uuid(
     *,
     db: Session = Depends(get_db),
     uuid : str,
-    current_user: models.User = Depends(TokenRequired(roles=["SUPER_ADMIN","USER"]))
+   current_user : models.User = Depends(TokenRequired(roles=["SUPER_ADMIN","USER"]))
 ):
     data = crud.emprunt.get_by_uuid(db=db,uuid=uuid)
     if not data:
