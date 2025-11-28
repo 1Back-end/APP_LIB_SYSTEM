@@ -9,3 +9,4 @@ from .books import *
 from .address import *
 from .emprunts import *
 from .retours import *
+from .bibliotheque import *

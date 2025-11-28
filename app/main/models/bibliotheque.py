@@ -34,7 +34,7 @@ class Bibliotheque(Base):
     address_uuid: str = Column(String, ForeignKey('addresses.uuid', ondelete="CASCADE", onupdate="CASCADE"),nullable=False)
     address = relationship("Address", foreign_keys=[address_uuid])
 
-    country_uuid: str = Column(String, ForeignKey('country.uuid', ondelete="CASCADE", onupdate="CASCADE"),nullable=False)
+    country_uuid: str = Column(String, ForeignKey('countries.uuid', ondelete="CASCADE", onupdate="CASCADE"),nullable=False)
     country = relationship("Country", foreign_keys=[country_uuid])
 
     city_uuid: str = Column(String, ForeignKey('cities.uuid', ondelete="CASCADE", onupdate="CASCADE"),nullable=False)
@@ -42,6 +42,13 @@ class Bibliotheque(Base):
 
     manager_uuid: str = Column(String, ForeignKey('users.uuid', ondelete="CASCADE", onupdate="CASCADE"),nullable=False)
     nmanager = relationship("User", foreign_keys=[manager_uuid])
+
+    is_deleted = Column(Boolean, nullable=False, default=False)
+
+    status : str = Column(String, nullable=False,default=BibliothequeStatus.pending)
+
+    logo_uuid: str = Column(String, ForeignKey('storages.uuid', ondelete="CASCADE", onupdate="CASCADE"),nullable=True)
+    logo = relationship("Storage", foreign_keys=[logo_uuid])
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
